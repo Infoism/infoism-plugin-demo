@@ -1,6 +1,13 @@
 # 1.0.0 (2023-02-06)
 
 
+### Features
+
+* 🎸 initial ([362245c](https://github.com/Infoism/infoism-plugin-demo/commit/362245cdbcff5385e160266b7d1426e908f6b850))
+
+# 1.0.0 (2023-02-06)
+
+
 ### Bug Fixes
 
 * 🐛 change default port to 3002 ([bbcdcb4](https://github.com/Infoism/infoism-plugin-demo/commit/bbcdcb4df472b6338717f71e9a36059642779666))
