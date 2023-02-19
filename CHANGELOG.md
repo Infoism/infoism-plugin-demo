@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Infoism/infoism-plugin-demo/compare/v1.0.0...v1.0.1) (2023-02-19)
+
+
+### Bug Fixes
+
+* 🐛 update package.json ([9d0b3a4](https://github.com/Infoism/infoism-plugin-demo/commit/9d0b3a4435210aa2333fac855691158c78bd51c1))
+
 # 1.0.0 (2023-02-06)
 
 
