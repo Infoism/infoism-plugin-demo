@@ -8,11 +8,19 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AButton: typeof import('@arco-design/web-vue')['Button']
+    ACheckbox: typeof import('@arco-design/web-vue')['Checkbox']
+    AForm: typeof import('@arco-design/web-vue')['Form']
+    AFormItem: typeof import('@arco-design/web-vue')['FormItem']
+    AInput: typeof import('@arco-design/web-vue')['Input']
+    APopover: typeof import('@arco-design/web-vue')['Popover']
     ARadio: typeof import('@arco-design/web-vue')['Radio']
     ARadioGroup: typeof import('@arco-design/web-vue')['RadioGroup']
     ASpace: typeof import('@arco-design/web-vue')['Space']
     ASwitch: typeof import('@arco-design/web-vue')['Switch']
+    ATooltip: typeof import('@arco-design/web-vue')['Tooltip']
+    ATrigger: typeof import('@arco-design/web-vue')['Trigger']
     ATypographyText: typeof import('@arco-design/web-vue')['TypographyText']
+    BridgeButton: typeof import('./src/components/BridgeButton.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

@@ -4,6 +4,7 @@ import MainApp from './App.vue';
 import i18next from './locales';
 import i18NextVue from 'i18next-vue';
 import 'uno.css';
+import '@arco-design/web-vue/dist/arco.css';
 import { router } from './routers';
 
 function initVueApp(App: Component) {
