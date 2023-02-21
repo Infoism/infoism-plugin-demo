@@ -2,15 +2,15 @@
   <a-button v-if="!paramSchema || !paramSchema.length" type="outline" @click="handleBridge">
     {{ title }}
   </a-button>
-  <a-popover v-else position="tl" default-popup-visible trigger="contextMenu">
-    <a-button type="outline" @click="handleBridge">
+  <a-popover v-else position="tl" trigger="hover">
+    <a-button type="outline" @click="handleBridge" :style="{ borderStyle: 'dashed' }">
       {{ title }}
     </a-button>
     <template #content>
       <a-form :model="bridgeData" :style="{ width: '300px' }" size="mini" :label-col-props="{ span: 5 }"
         :wrapper-col-props="{ span: 19 }">
         <a-form-item v-for="schema in paramSchema" :field="schema.name" :label="schema.name">
-          <a-input v-model="bridgeData[schema.name]" />
+          <a-input spellcheck="false" v-model="bridgeData[schema.name]" />
         </a-form-item>
       </a-form>
     </template>
@@ -32,18 +32,16 @@ type paramSchema = schema[]
 const props = defineProps<{
   channel: string
   paramSchema?: paramSchema
-  callback?: () => void
+  callback?: (...args: any[]) => void
   title: string
 }>()
 
 const initBridgeData = () => {
-  console.log(props.paramSchema);
   if (!props.paramSchema) return {};
   const res = props.paramSchema.reduce((pre, curr) => {
     pre[curr.name] = curr.default
     return pre
   }, {} as Record<string, any>)
-  console.log(res);
   return res
 }
 const bridgeData = reactive(initBridgeData())
@@ -51,7 +49,8 @@ const handleBridge = function () {
   const id = nanoid()
   const startTime = Date.now()
 
-  bridge[props.channel](toRaw(bridgeData)).then((res: any) => {
+  bridge[props.channel](toRaw(bridgeData), props.callback).then((res: any) => {
+    console.log('执行成功', res, '执行时间', Date.now() - startTime, 'ms');
     Notification.success({
       id,
       position: 'bottomRight',
@@ -59,6 +58,7 @@ const handleBridge = function () {
       duration: 3000
     })
   }).catch((err: any) => {
+    console.log('执行失败', err, '执行时间', Date.now() - startTime, 'ms');
     Notification.error({
       id,
       position: 'bottomRight',

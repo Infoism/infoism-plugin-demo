@@ -17,5 +17,6 @@
   "events": "Events",
   "souSuo": "搜索",
   "checkIfWindowIsMaximized": "判断窗口当前是否最大化",
-  "downloadPlugin": "下载插件"
+  "downloadPlugin": "下载插件",
+  "openPluginDir": "打开插件目录"
 }

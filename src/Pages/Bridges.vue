@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import { nanoid } from 'nanoid';
 import BridgeButton from '../components/BridgeButton.vue';
+import { Notification } from '@arco-design/web-vue'
 
 type paramType = 'string' | 'number' | 'object'
 type schema = {
@@ -15,7 +17,34 @@ const schemaDownloadPlugin: paramSchema = [{
 }, {
   name: 'id',
   type: 'string',
-  default: 'infoism-plugin-demo'
+  default: 'Demo'
+}]
+
+function callbackDownloadPlugin(percentage: number) {
+  const id = nanoid()
+  if (percentage === 100) {
+    Notification.success({
+      id,
+      position: 'bottomRight',
+      title: '[Bridge]: downloadPlugin',
+      content: `progress -> ${percentage}%`,
+      duration: 3000,
+    })
+  } else {
+    Notification.warning({
+      id,
+      position: 'bottomRight',
+      title: '[Bridge]: downloadPlugin',
+      content: `progress -> ${percentage}%`,
+      duration: 3000,
+    })
+  }
+}
+
+const schemaOpenPluginDir: paramSchema = [{
+  name: 'id',
+  type: 'string',
+  default: 'Demo'
 }]
 
 </script>
@@ -32,7 +61,10 @@ const schemaDownloadPlugin: paramSchema = [{
   </a-space>
   <h3>插件</h3>
   <a-space>
-    <BridgeButton :paramSchema="schemaDownloadPlugin" channel="downloadPlugin" :title="$t('downloadPlugin')">
+    <BridgeButton :callback="callbackDownloadPlugin" :paramSchema="schemaDownloadPlugin" channel="downloadPlugin"
+      :title="$t('downloadPlugin')">
+    </BridgeButton>
+    <BridgeButton :paramSchema="schemaOpenPluginDir" channel="openPluginDir" :title="$t('openPluginDir')">
     </BridgeButton>
   </a-space>
 </template>
