@@ -10,7 +10,7 @@ const pages = routes.filter((v) => (Boolean(v.component)))
 <template>
   <div pl8>
     <div flex item-center justify-center>
-      <a-radio-group mt4 no-drag type="button" :model-value="router.currentRoute.value.name">
+      <a-radio-group mt4 no-drag type="button" :model-value="String(router.currentRoute.value.name)">
         <a-radio v-for="page, index in pages" :key="index" :value="page.name" @click="router.push(page.path)">{{
           page.name
         }}</a-radio>
@@ -24,6 +24,4 @@ const pages = routes.filter((v) => (Boolean(v.component)))
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
