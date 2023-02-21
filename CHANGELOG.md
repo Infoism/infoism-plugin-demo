@@ -1,3 +1,16 @@
+# [1.1.0](https://github.com/Infoism/infoism-plugin-demo/compare/v1.0.1...v1.1.0) (2023-02-21)
+
+
+### Bug Fixes
+
+* 🐛 type error ([389dc94](https://github.com/Infoism/infoism-plugin-demo/commit/389dc94697c329fa811daa738a5f4817648d0e97))
+
+
+### Features
+
+* 🎸 [Bridge] add downloadPlugin ([1c77bf9](https://github.com/Infoism/infoism-plugin-demo/commit/1c77bf92025e8634d07f0235c24a6384b8e73fa8))
+* 🎸 [Bridge] add openPluginDir ([0775e01](https://github.com/Infoism/infoism-plugin-demo/commit/0775e01b0c3477c1c9a063cf211820ebf5c24988))
+
 ## [1.0.1](https://github.com/Infoism/infoism-plugin-demo/compare/v1.0.0...v1.0.1) (2023-02-19)
 
 
