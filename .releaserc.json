@@ -20,7 +20,7 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "zip -qq -r infoism-plugin-demo-${nextRelease.version}.zip dist readme.md package.json *.png"
+        "prepareCmd": "zip -qq -r infoism-plugin-demo-${nextRelease.version}.zip dist readme.md package.json *.png *svg"
       }
     ],
     [
